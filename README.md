@@ -100,15 +100,15 @@ All these will create a new list.
 
 ## Arithmetic 8
 
-* +
-* -
-* *
+* `+`
+* `-`
+* `*`
 * float division
 * integer division
-* %
-* &
-* |
-* ^
+* `%`
+* `&`
+* `|`
+* `^`
 * Negate
 * Reprical
 * Power
