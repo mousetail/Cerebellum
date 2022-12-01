@@ -1,9 +1,10 @@
 # Cerebellum
 
-This language will use polish notation, so will be unique in being not stack based. There are only 3 types:
+This language will use polish notation, so will be unique in being not stack based. There are only 5 types:
 
 - Numbers, can be float or integer. Program will decide for you.
 - Lists/Iterators, can be infinite or finite. Are lazy, will only be evaluated when needed.
+- Functions - Take either 1, 2, or 3 arguments. Can only be called with the special "call function" operation.
 - True, equivolent to 1 is most situations
 - False/None, equivolent to 0 in most situations
 
