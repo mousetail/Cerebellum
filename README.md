@@ -132,7 +132,7 @@ All these will create a new list.
 * round
 * To degrees
 * To radians
-* 1 Count
+* 1 Count (binary)
 
 ## Logic (3)
 
