@@ -14,6 +14,8 @@ Other types are represented as follows:
 - Note: Many string functions will treat lists of characters as or. Thus `replaceChar("abc")` will actually replace on any `a`,
 `b` OR `c`, while `replaceString("abc")` will only replace if the characters appear in a row.
 
+This also means many, if not most string functions will work on arrays of other data too, including arrays of arrays.
+
 All types are immutable, all operations make a copy. For example, using `setN` on a list will actually return a new list with the `n-th`
 element replaced, leaving the old one unchanged.
 
