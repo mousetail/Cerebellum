@@ -306,7 +306,7 @@ All these will create a new list.
 
 # Numbers to strings
 
-* Stringify
+* Stringify (repr's lists, decimals numbers)
 * number to base 16
 * number to base N
 * string to number (base 10)
