@@ -22,7 +22,7 @@ element replaced, leaving the old one unchanged.
 
 All operations have fixed arity. Only the `Splat` and `SplatSingle` commands can override this.
 
-## Iterator Commands (6)
+## Iterator Commands (9)
 
 These functions will implititly create a new function. No lambda needed. Note: Lists may be infinite.
 
@@ -36,7 +36,7 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Any
 * All
 
-## Iterator Util (9)
+## Iterator Util (39)
 
 All these will create a new list.
 
@@ -80,7 +80,7 @@ All these will create a new list.
 * To Sparse
 * From Sparse (untruth in vyxal)
 
-## Python Itertools
+## Python Itertools (6)
 
 * Combinations
 * Permutations
@@ -89,7 +89,7 @@ All these will create a new list.
 * Powerset
 * Sublists
 
-## Range
+## Range (7)
 
 * Range
 * InfiniteRange
@@ -99,7 +99,7 @@ All these will create a new list.
 * RotateLeft
 * RotateRight
 
-## Arithmetic 8
+## Arithmetic 8 (33)
 
 * `+`
 * `-`
@@ -135,13 +135,13 @@ All these will create a new list.
 * To radians
 * 1 Count (binary)
 
-## Logic (3)
+## Logic (13)
 
 * If
 * Or (Short Cirquiting)
 * And (Short Cirquiting)
 
-## Variables(13)
+## Variables (19)
 
 * First of current function
 * Second "
@@ -163,7 +163,7 @@ All these will create a new list.
 * Parent Parent List
 * Nth-parent list
 
-## Functions
+## Functions (8)
 
 * Create Function with 1 argument
 * Create function with 2 arguments
@@ -174,7 +174,7 @@ All these will create a new list.
 * Recurse
 * Recurse File
 
-## Constants(24)
+## Constants (25)
 
 * 1
 * 2
@@ -202,7 +202,7 @@ All these will create a new list.
 * 512
 * None
 
-## Strings (4)
+## Strings (28)
 
 * SplitChar
 * SplitString
@@ -233,7 +233,7 @@ All these will create a new list.
 * Join
 * Matching Parenthesis
 
-## Strings Constants
+## Strings Constants (8)
 
 * Letters
 * LowercaseLetters
@@ -245,7 +245,7 @@ All these will create a new list.
 * Digits
 
 
-## IO
+## IO (9)
 
 * Output as letters (Unicode code points)
 * Output as numbers (repr)
@@ -255,9 +255,9 @@ All these will create a new list.
 * Exit
 * Current Time (Unix Time)
 * Current Time (ISO)
-* Current Time [year, month, day, hour, minute, second, millisecond]
+* Current Time `[year, month, day, hour, minute, second, millisecond]`
 
-## Logic
+## Logic (13)
 
 * Equals
 * Less
@@ -273,19 +273,19 @@ All these will create a new list.
 * InRange (Incl)
 * InRange (Excl)
 
-## Literals
+## Literals (4)
 
 * Number Literal (base64)
 * String Literal (Raw)
 * String Literal (base255)
 * String Literal (ASCII printable Only)
 
-## Parenthesis
+## Parenthesis (2)
 
 * Break
 * Continue
 
-## Inspection
+## Inspection (6)
 
 * Source Code
 * Eval
@@ -294,7 +294,7 @@ All these will create a new list.
 * Version
 * Edit
 
-# Linear Algebra
+## Linear Algebra (8)
 
 * Dot Product
 * Cross Product
@@ -305,7 +305,7 @@ All these will create a new list.
 * Inverse
 * Quat to matrix
 
-# Numbers to strings
+## Numbers to strings (7)
 
 * Stringify (repr's lists, decimals numbers)
 * number to base 16
@@ -315,7 +315,7 @@ All these will create a new list.
 * stirng to number (base 16)
 * string to number (base N)
 
-# Primes
+## Primes (6)
 
 * Is Prime?
 * Nth prime
@@ -324,7 +324,7 @@ All these will create a new list.
 * GCD
 * LCM
 
-## Random
+## Random (5)
 
 * Choice
 * Number in range
@@ -332,7 +332,7 @@ All these will create a new list.
 * Condition
 * Shuffle
 
-## Special
+## Special (7)
 
 * Splat (apply a array to multiple arguments of a function, overrides arity)
 * SplatSingle (apply a single value to all arguments of a function)
@@ -341,3 +341,6 @@ All these will create a new list.
 * Deepcopy
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None
 * Discard: Evaluate a element but return None
+
+
+
