@@ -3,8 +3,8 @@
 This language will use polish notation, so will be unique in being not stack based. There are only 5 types:
 
 - Numbers, can be float or integer. Program will decide for you.
-- Lists/Iterators, can be infinite or finite. Are lazy, will only be evaluated when needed.
-- Functions - Take either 1, 2, or 3 arguments. Can only be called with the special "call function" operation.
+- Lists/Iterators, can be infinite or finite. Are lazy, will only be evaluated when needed. Applying arithmetic to arrays vecotrizes.
+- Functions - Take either 1, 2, or 3 arguments. Can only be called with the special "call function" operation. Applying arithmetic to functions composes, aka `(λa:x)+(λa:y) = (λa:x+y)`
 - True, equivolent to 1 is most situations
 - False/None, equivolent to 0 in most situations
 
@@ -36,10 +36,12 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Any
 * All
 
-## Iterator Util (39)
+## Iterator Util (41)
 
 All these will create a new list.
 
+* Length
+* Truncate
 * Chain (concat)
 * ChainInfinite
 * Flatten
@@ -99,7 +101,7 @@ All these will create a new list.
 * RotateLeft
 * RotateRight
 
-## Arithmetic 8 (33)
+## Arithmetic (33)
 
 * `+`
 * `-`
@@ -135,7 +137,7 @@ All these will create a new list.
 * To radians
 * 1 Count (binary)
 
-## Logic (13)
+## Logic (3)
 
 * If
 * Or (Short Cirquiting)
@@ -163,14 +165,12 @@ All these will create a new list.
 * Parent Parent List
 * Nth-parent list
 
-## Functions (8)
+## Functions (6)
 
-* Create Function with 1 argument
-* Create function with 2 arguments
-* Create function with 3 arguments
-* Call function with 1 argument
-* Call function with 2 arguments
-* Call function with 3 arguments
+* Create a new anynymous function
+* Call function with 1 argument, others will be set to None
+* Call function with 2 arguments, others will be set to None
+* Call function with 3 arguments, others will be set to None
 * Recurse
 * Recurse File
 
@@ -332,15 +332,20 @@ All these will create a new list.
 * Condition
 * Shuffle
 
-## Special (7)
+## Special (8)
 
 * Splat (apply a array to multiple arguments of a function, overrides arity)
 * SplatSingle (apply a single value to all arguments of a function)
+* SplatVariables (In a map apply the function with the variables from the current lambda)
 * Get Arity
 * Copy
 * Deepcopy
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None
 * Discard: Evaluate a element but return None
+
+
+
+
 
 
 

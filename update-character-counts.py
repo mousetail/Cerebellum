@@ -36,3 +36,5 @@ with open("README.md", "wb") as f:
             f.write(b' ('+str(categories[line[3:].split(b'(')[0].strip()]).encode('utf-8')+b")")
         f.write(b'\n')
 
+print("Total commands: ", total)
+
