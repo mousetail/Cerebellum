@@ -24,6 +24,27 @@ element replaced, leaving the old one unchanged.
 
 All operations have fixed arity. Only the `Splat` and `SplatSingle` commands can override this.
 
+## Infinite Arrays (0)
+
+I'm still thinking a bit about the implementation details of the infinite arrays, and how to handle them efficiently, while also staying inituitive. In general there will be at least
+a couple different categoires:
+
+- Fully Filled Arrays, size known, all elements precomputed
+- Generators - No ellements filled, items evaluated successively. May be infinite, finite, or unknown size.
+- Mapping Functions - Like generators but don't require previous values known to compute the next. Still lazy. May be infinite, finite, or of unknown size. Because of the limited amount of possible side effects it will be reasonably to dynamically decide if a certain list is a generator or mapping function.
+- Addons: A mutation on a existing array, eg: Using Insert, Set or Delete
+
+Iterator methods will be the only way to really do looping so forcing evaluation of a map must be super convenient. I propose immediatly evaluating any iterator command that
+contains a side effect. This way the behavior will always appear identical to a non-lazy list. However, still supporting infinite values. Mapping infinite arrays with side effects
+simply leads to a infinite loop.
+
+This does mean that creating a infinte loop with no side effects becomes harder, though not impossible. Either use the IsFinite built on or just add a side effect that effectively does nothing.
+
+The next issue is handling multiple copies of lazy things. Since everything is "immutable" we need to copy the array every time. We don't want a huge performance penalty from
+lazy evaluating things multiple times. Copies should still probably really be a reference to the same underlying object, storing it's own changes seperately. Then when one gets evaluated they all get evaluated. At some point a list could have so many changes though it's more effort to keep track of the changes than to just flatten the original list. It could be tricky to find out when to do this, especially when you have no idea how expensive evaluting the expression actually is.
+
+This is in addition to the standard `CopyOnWrite` optimization for non-lazy lists.
+
 ## Iterator Commands (9)
 
 These functions will implititly create a new function. No lambda needed. Note: Lists may be infinite.
@@ -38,7 +59,7 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Any
 * All
 
-## Iterator Util (41)
+## Iterator Util (42)
 
 All these will create a new list.
 
@@ -52,6 +73,7 @@ All these will create a new list.
 * Nth
 * Delete Nth
 * Replace Nth
+* Insert at N
 * Slice
 * Delete Range
 * Replace Range
@@ -345,6 +367,7 @@ All these will create a new list.
 * Deepcopy
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None
 * Discard: Evaluate a element but return None
+
 
 
 
