@@ -16,6 +16,7 @@ Other types are represented as follows:
 - Strings are just lists of characters
 - Note: Many string functions will treat lists of characters as or. Thus `replaceChar("abc")` will actually replace on any `a`,
 `b` OR `c`, while `replaceString("abc")` will only replace if the characters appear in a row.
+- Numbers can be considered arrays of their decimal digits
 
 This also means many, if not most string functions will work on arrays of other data too, including arrays of arrays.
 
