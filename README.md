@@ -5,7 +5,7 @@ This language will use polish notation, so will be unique in being not stack bas
 - Numbers, can be float or integer. Program will decide for you.
 - Lists/Iterators, can be infinite or finite. Are lazy, will only be evaluated when needed. Applying arithmetic to arrays vecotrizes.
 - Functions - Take either 1, 2, or 3 arguments. Can only be called with the special "call function" operation. Applying arithmetic to functions composes, aka `(λa:x)+(λa:y) = (λa:x+y)`
-- True, equivolent to 1 is most situations
+- True, equivalent to 1 is most situations
 - False/None, equivolent to 0 in most situations
 
 Other types are represented as follows:
