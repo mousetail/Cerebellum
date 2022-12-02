@@ -1,12 +1,14 @@
 # Cerebellum
 
+A semi-functional, array oriented golfing language with no cheaty builtins. Currently has 254 operators.
+
 This language will use polish notation, so will be unique in being not stack based. There are only 5 types:
 
 - Numbers, can be float or integer. Program will decide for you.
 - Lists/Iterators, can be infinite or finite. Are lazy, will only be evaluated when needed. Applying arithmetic to arrays vecotrizes.
 - Functions - Take either 1, 2, or 3 arguments. Can only be called with the special "call function" operation. Applying arithmetic to functions composes, aka `(λa:x)+(λa:y) = (λa:x+y)`
 - True, equivalent to 1 is most situations
-- False/None, equivolent to 0 in most situations
+- False/None, equivalent to 0 in most situations
 
 Other types are represented as follows:
 
@@ -137,13 +139,13 @@ All these will create a new list.
 * To radians
 * 1 Count (binary)
 
-## Logic (3)
+## Logic (13)
 
 * If
 * Or (Short Cirquiting)
 * And (Short Cirquiting)
 
-## Variables (19)
+## Variables (18)
 
 * First of current function
 * Second "
@@ -154,8 +156,7 @@ All these will create a new list.
 * First of nth scope
 * Second "
 * Third
-* Input
-* nth-command line argument
+* List of command line arguments. Excludes any used by the interpreter.
 * Create Variable
 * Read N-th variable
 * Index in inner loop
@@ -245,13 +246,14 @@ All these will create a new list.
 * Digits
 
 
-## IO (9)
+## IO (10)
 
 * Output as letters (Unicode code points)
 * Output as numbers (repr)
 * Print a space
 * Print a line break
-* Input
+* Input as string (list of char codes)
+* Input as list of numbers (decimals, space seperated)
 * Exit
 * Current Time (Unix Time)
 * Current Time (ISO)
@@ -285,14 +287,15 @@ All these will create a new list.
 * Break
 * Continue
 
-## Inspection (6)
+## Inspection (7)
 
 * Source Code
 * Eval
 * Filename
-* Open
-* Version
-* Edit
+* Read file
+* Write to file
+* Read HTTP
+* Post HTTP
 
 ## Linear Algebra (8)
 
@@ -342,6 +345,11 @@ All these will create a new list.
 * Deepcopy
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None
 * Discard: Evaluate a element but return None
+
+
+
+
+
 
 
 
