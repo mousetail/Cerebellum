@@ -60,52 +60,63 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Any
 * All
 
-## Iterator Util (42)
+## Iterator -> Scalar (11)
 
-All these will create a new list.
+Everything is immutable, so eveything will create a new list.
 
 * Length
+* First
+* Last
+* Nth
+* Slice/Sublist/Substring - Actually returns a iterator.
+* Sum
+* All Equal?
+* Count
+* Average
+* Median
+* Mode
+
+## Iterator -> Iterator (29)
+
 * Truncate
 * Chain (concat)
 * ChainInfinite
 * Flatten
-* First
-* Last
-* Nth
 * Delete Nth
 * Replace Nth
 * Insert at N
-* Slice
 * Delete Range
 * Replace Range
-* Limit
 * Chunks
+* Transpose
 * ChunksOverlapping
 * Zip
 * ZipSelf
 * Enumerate
-* Transpose
-* Repeat
-* Once
-* Pair
-* N-Sized (Takes a array of size N, returns a N-dimentional array with coordinates equal to the values in the array. Fill with X)
-* Sum
 * Union
 * Intersection
 * Sort
 * SortReverse
 * Sort by key
 * Intersperse
-* All Equal?
 * FilterUnique
-* Count
 * Uniquefy
-* Average
-* Median
-* Mode
 * Local Maxima
 * To Sparse
-* From Sparse (untruth in vyxal)
+* From Sparse
+* Reverse
+* RotateLeft
+* RotateRight
+
+## Primite -> Iterator (7)
+
+* Range
+* InfiniteRange
+* RangeInclusive
+* RangeWithStep
+* N-Sized (Takes a array of size N, returns a N-dimentional array with coordinates equal to the values in the array. Fill with X)
+* Once
+* Pair
 
 ## Python Itertools (6)
 
@@ -116,17 +127,11 @@ All these will create a new list.
 * Powerset
 * Sublists
 
-## Range (7)
 
-* Range
-* InfiniteRange
-* RangeInclusive
-* RangeWithStep
-* Reverse
-* RotateLeft
-* RotateRight
 
 ## Arithmetic (33)
+
+Vectorizes arrays, composes functions.
 
 * `+`
 * `-`
@@ -320,16 +325,17 @@ All these will create a new list.
 * Read HTTP
 * Post HTTP
 
-## Linear Algebra (8)
+## Linear Algebra (9)
 
 * Dot Product
 * Cross Product
 * Complex Multiply (Padded to power of 2, max 8)
+* Complex Divide
 * Matrix Multiply
 * Diagonal
 * Antidiagonal
-* Inverse
-* Quat to matrix
+* Matrix Inverse
+* Complex to matrix
 
 ## Numbers to strings (7)
 
@@ -341,10 +347,9 @@ All these will create a new list.
 * stirng to number (base 16)
 * string to number (base N)
 
-## Primes (6)
+## Primes (5)
 
-* Is Prime?
-* Nth prime
+* Infinite List of Primes
 * Factors
 * Prime Factors
 * GCD
@@ -358,26 +363,11 @@ All these will create a new list.
 * Condition
 * Shuffle
 
-## Special (8)
+## Special (5)
 
 * Splat (apply a array to multiple arguments of a function, overrides arity)
 * SplatSingle (apply a single value to all arguments of a function)
 * SplatVariables (In a map apply the function with the variables from the current lambda)
-* Get Arity
-* Copy
-* Deepcopy
-* IsFinite: Return the list evaluated if it's finite. Otherwise, return None
+* IsFinite: Return the list evaluated if it's finite. Otherwise, return None. Also works on numbers. If the list is infinite but can't be proven (eg. you are trying to solve 3n+1) this might hang forever. Will also hang forever for generators with side effects. For numbers returns if the number is finite. For functions returns if it's O(1).
 * Discard: Evaluate a element but return None
-
-
-
-
-
-
-
-
-
-
-
-
 
