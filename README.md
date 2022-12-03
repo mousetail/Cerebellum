@@ -71,7 +71,7 @@ Everything is immutable, so eveything will create a new list.
 * Slice/Sublist/Substring - Actually returns a iterator.
 * Sum
 * All Equal?
-* Count
+* Count (Same as Filter Length)
 * Average
 * Median
 * Mode
