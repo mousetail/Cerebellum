@@ -173,20 +173,18 @@ Vectorizes arrays, composes functions.
 * Or (Short Cirquiting)
 * And (Short Cirquiting)
 
-## Variables (18)
+## Variables (16)
 
-* First of current function
-* Second "
+* Most Recently Defined
+* Second
 * Third
-* First of parent scope
-* "
-* "
-* First of nth scope
-* Second "
-* Third
+* Fourth
+* Fifth
+* Sixth
+* N-th variable
 * List of command line arguments. Excludes any used by the interpreter.
 * Create Variable
-* Read N-th variable
+* Create function variable (lambda)
 * Index in inner loop
 * Index in parent loop
 * Index in nth-parent loop
@@ -370,4 +368,5 @@ Vectorizes arrays, composes functions.
 * SplatVariables (In a map apply the function with the variables from the current lambda)
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None. Also works on numbers. If the list is infinite but can't be proven (eg. you are trying to solve 3n+1) this might hang forever. Will also hang forever for generators with side effects. For numbers returns if the number is finite. For functions returns if it's O(1).
 * Discard: Evaluate a element but return None
+
 
