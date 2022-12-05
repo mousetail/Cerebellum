@@ -76,7 +76,7 @@ Everything is immutable, so eveything will create a new list.
 * Median
 * Mode
 
-## Iterator -> Iterator (29)
+## Iterator -> Iterator (31)
 
 * Truncate
 * Chain (concat)
@@ -85,6 +85,8 @@ Everything is immutable, so eveything will create a new list.
 * Delete Nth
 * Replace Nth
 * Insert at N
+* Insert at start
+* Insert at end
 * Delete Range
 * Replace Range
 * Chunks
@@ -368,5 +370,6 @@ Vectorizes arrays, composes functions.
 * SplatVariables (In a map apply the function with the variables from the current lambda)
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None. Also works on numbers. If the list is infinite but can't be proven (eg. you are trying to solve 3n+1) this might hang forever. Will also hang forever for generators with side effects. For numbers returns if the number is finite. For functions returns if it's O(1).
 * Discard: Evaluate a element but return None
+
 
 
