@@ -53,6 +53,7 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Map (Might be not neded, implicit?)
 * Filter
 * Reduce
+* Fold
 * Scan
 * Successors
 * FixedPoint (Apply till unchanged)
@@ -71,7 +72,6 @@ Everything is immutable, so eveything will create a new list.
 * Slice/Sublist/Substring - Actually returns a iterator.
 * Sum
 * All Equal?
-* Count (Same as Filter Length)
 * Average
 * Median
 * Mode

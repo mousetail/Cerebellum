@@ -1,0 +1,158 @@
+commands:
+  - name: Map
+    arguments:
+        - name: array
+          type: mapping
+        - name: function
+          type: lambda-1-implicit
+    return: mapping
+    description: Apply a function to every element of a collection, and return the result. Result is lazy, function only executed when needed. Not nececairly executed in order. Side effect override this behavior.
+  - name: Filter
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: generator
+    description: Apply a function to every element, keeping only truthy elements. Result is lazy, function only executed when needed, but always in order. Side effect force immediate execution.
+  - name: Reduce
+    arguments:
+        - name: array
+          type: generator
+        - name: initial value
+          type: scalar
+        - name: function
+          type: lambda-2-implicit
+    return: scalar
+    description: apply a function to every pair of elements. Return the final result.
+  - name: Fold
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-2-implicit
+
+    return: scalar
+    description: apply a function to every pair of elements. Return the final result.
+  - name: Scan
+    arguments:
+        - name: array
+          type: generator
+        - name: initial value
+          type: scalar
+        - name: function
+          type: lambda-2-implicit
+    return: scalar
+    description: Map with state. Function should return a array of 2 elements, the second will be passed as the second argument to the next iteration.
+  - name: Successors
+    arguments:
+        - name: initial value
+          type: scalar
+        - name: function
+          type: lambda-1-implicit
+    return: generator
+    description: Repeatedly apply a function to a initial value, returning a infinite generator of each intermediate value.
+  - name: Fixed Point
+    arguments:
+        - name: initial value
+          type: scalar
+        - name: function
+          type: lambda-1-implicit
+    return: scalar
+    description: Repeatedly apply a funnction to it's own output till the result stops changing, then return that value. May cause infinte loop if the function does not converge.
+  - name: Take While
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: generator
+    description: Truncate the list to before the first element so that f(x) returns a fasly value.
+  - name: Any
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: boolean
+    description: return True if for any x in the array f(x) returns a truthy value. May loop infinitely for a infinitely sized array that's all false.
+  - name: All
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: boolean
+    description: return False if for any x in the array f(x) returns a falsy value. May loop infinitely for a infinitely sized array that's all true.
+  - name: Length
+    arguments:
+        - name: array
+          type: array
+    return: integer
+    description: return the length of a list. Generators or mappings may need to be converted to lists, which will fully evaluate them.
+  - name: First
+    arguments:
+        - name: generator
+          type: generator
+    return: scalar
+    description: Return the first value of a array
+  - name: Last
+    arguments:
+        - name: array
+          type: array
+    return: scalar
+    description: Return the last value of a array
+  - name: Nth
+    arguments:
+        - name: array
+          type: array
+        - name: index
+          type: integer
+    return: scalar
+    description: return the nth element of a array. Negativee values wrap to the end of the array. Negative elements thus require a array of finite length.
+  - name: Slice
+    arguments:
+        - name: array
+          type: array
+        - name: start
+          type: integer
+        - name: end
+          type: integer
+    return: generator
+    description: slize a subsequence from a array. Start and end are both inclusive. Negative values wrap.
+  - name: Sum
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: scalar
+    description: Sum f(x) for every value in the array
+  - name: All Equal
+    arguments:
+        - name: array
+          type: generator
+        - name: function
+          type: lambda-1-implicit
+    return: boolean
+    description: If f(x) is equal for all element of the array
+  - name: Average
+    arguments:
+        - name: array
+          type: generator
+    return: scalar
+    description: the sum divided by the length
+  - name: Median
+    arguments:
+        - name: array
+          type: generator
+    return: scalar
+    description: Sort the array and return the middle element.
+  - name: Mode
+    arguments:
+        - name: array
+          type: generator
+    return: scalar
+    description: Return the most common element in a generator. In case of a tie the first element is returned.
+
+
