@@ -80,8 +80,8 @@ Everything is immutable, so eveything will create a new list.
 
 * Truncate
 * Chain (concat)
-* ChainInfinite
-* Flatten
+* FlattenOnce
+* FlattenRecursive
 * Delete Nth
 * Replace Nth
 * Insert at N

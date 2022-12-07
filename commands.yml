@@ -154,5 +154,40 @@ commands:
           type: generator
     return: scalar
     description: Return the most common element in a generator. In case of a tie the first element is returned.
-
+  - name: Truncate
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: max
+        type: integer
+    return: generator
+    description: Limit a array to max N elements
+  - name: Chain
+    arguments:
+      - name: array1
+        type: generator
+      - name: array2
+        type: generator
+    return: generator
+    description: concatenate 2 arrays
+  - name: FlattenOnce
+    arguments:
+      - name: array
+        type: generator
+    return: generator
+    description: Flatten (once) a generator of generators
+  - name: FlattenRecursive
+    arguments:
+      - name: array
+        type: generator
+    return: generator
+    description: flatten a generator, then recurisvely flatten each element until only numbers and functions remain
+  - name: Delete Nth
+    arguments:
+      - name: array
+        type: generator
+      - name: index
+        type: integer
+    return: generator
+    description: delete the Nth element of a collection, returns a new list with all elements after N shifted 1 to the left.
 
