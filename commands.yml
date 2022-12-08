@@ -176,18 +176,181 @@ commands:
         type: generator
     return: generator
     description: Flatten (once) a generator of generators
-  - name: FlattenRecursive
+  - name: FlattenN
     arguments:
       - name: array
         type: generator
+      - name: N
+        type: integer
     return: generator
-    description: flatten a generator, then recurisvely flatten each element until only numbers and functions remain
+    description: flatten a generator, then recurisvely flatten each element up to a depth of N.
   - name: Delete Nth
     arguments:
       - name: array
-        type: generator
+        type: generator/mapping
       - name: index
         type: integer
+    return: generator/mapping
+    description: delete the Nth element of a collection, returns a new list with all elements 
+    fter N shifted 1 to the left.
+  - name: Replace Nth
+    arguments:
+      - name: array
+        type: mapping
+      - name: N
+        type: integer
+      - name: replacement
+        type: scalar
+    return: mapping
+    descritption: Return a new array that replaces the Nth element with replacement.
+  - name: Insert at N
+    arguments:
+      - name: array
+        type: mapping
+      - name: N
+        type: integer
+      - name: value
+        type: scalar
+    return: mapping
+    description: Return a new array that inserts value in position N, moving all values after N to the right
+  - name: Prepend
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: value
+        type: scalar
+    return: generator/mapping
+    description: Return a new array which has value as it's first element and array as all the rest
+  - name: Append
+    arguments:
+      - name: array
+        type: generator
+      - name: value
+        type: scalar
     return: generator
-    description: delete the Nth element of a collection, returns a new list with all elements after N shifted 1 to the left.
-
+    descritption: Return a new generator with value inserted at the end
+  - name: Delete Range
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: start
+        type: integer
+      - name: end
+        type: integer
+    return: generator/mapping
+    description: Return a new generator with the given range removed.
+  - name: Replace Range
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: start
+        type: integer
+      - name: end
+        type: integer
+      - name: replacement
+        type: array
+    return: mapping/generator
+    description: Replace the range given by start/end with a new range
+  - name: Delete First Equals
+    arguments:
+      - name: array
+        type: generator
+      - name: value
+        type: scalar
+    return: generator
+  - name: Delete All Equals
+    arguments:
+      - name: array
+        type: generator
+      - name: value
+        type: scalar
+    return: generator
+    description: Return a generator with all items equal to value removed
+  - name: Chunks
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: chunk size
+        type: integer
+    return: generator
+    description: Return a array of arrays, each being a slice of chunk size. Each chunk ends right before the next one starts.
+  - name: Chunks Overlapping
+    arguments:
+      - name: array
+        type: generator/mapping
+      - name: chunk size
+        type: integer
+    return: generator
+    description: Return a array of arrays, each chunk size long. The start of each array is offset by 1, thus the chunks will overlap.
+  - name: Transpose
+    arguments:
+      - name: array
+        type: array
+    return: generator
+    description: Given a array of arrays return a array that iterates over the first of each subarray, then the second etc.
+  - name: Zip
+    arguments:
+      - name: array_1
+        type: generator/mapping
+      - name: array_2
+        type: generator/mapping
+    return: generator/mapping
+    descritpion: Given 2 array return a generator of pairs of values, one from each
+  - name: MultiSetUnion
+    arguments:
+      - name: array_1
+        type: array
+      - name: array_2
+        type: array
+    return: generator
+    description: Each element will appear max(a,b) times where a is how often it appears in array_1 and b is how often it appears in array_2
+  - name: MultiSetIntersection
+    arguments:
+      - name: array_1
+        type: array
+      - name: array_2
+        type: array
+    return: generator
+    description: Each element will appear min(a,b) times where a is how often it appears in array_1 and b is how often it appears in array_2
+  - name: MultiSetDifference
+    arguments:
+      - name: array_1
+        type: array
+      - name: array_2
+        type: array
+    return: array
+    description: Each element will appear max(0,a-b) times where a is how often it appears in array_1 and b is how often it appears in array_2
+  - name: Sort
+    arguments:
+      - name: array
+        type: array
+    return: array
+    description: Sort a array in lexicographical order
+  - name: Sort reverse
+    arguments:
+      - name: array
+        type: array
+    return: array
+    description: Sort a array in reverse lexicographical order
+  - name: Sort by key
+    arguments:
+      - name: array
+        type: array
+      - name: function
+        type: lambda-1-implicit
+    description: Sort a array by the result of applying the function to each element
+  - name: Intersperse
+    arguments:
+      - name: array
+        type: generator
+      - name: value
+        type: scalar
+    description: Return a new array with scalar inserted between each 2 elements.
+  - name: Uniquefy
+    arguments:
+      - name: array
+        type: array
+    return: arraay
+    description: Return a array where each element that appeared multiple times now appears once
+  - name: Local Maxima
+    

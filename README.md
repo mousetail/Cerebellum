@@ -89,19 +89,19 @@ Everything is immutable, so eveything will create a new list.
 * Insert at end
 * Delete Range
 * Replace Range
+* Delete First Equals
+* Delete all equals
 * Chunks
 * Transpose
 * ChunksOverlapping
 * Zip
-* ZipSelf
-* Enumerate
-* Union
-* Intersection
+* SetUnion
+* SetIntersection
+* SetDifference
 * Sort
 * SortReverse
 * Sort by key
 * Intersperse
-* FilterUnique
 * Uniquefy
 * Local Maxima
 * To Sparse
