@@ -46,7 +46,7 @@ lazy evaluating things multiple times. Copies should still probably really be a 
 
 This is in addition to the standard `CopyOnWrite` optimization for non-lazy lists.
 
-## Iterator Commands (9)
+## Iterator Commands (10)
 
 These functions will implititly create a new function. No lambda needed. Note: Lists may be infinite.
 
@@ -61,7 +61,7 @@ These functions will implititly create a new function. No lambda needed. Note: L
 * Any
 * All
 
-## Iterator -> Scalar (11)
+## Iterator -> Scalar (10)
 
 Everything is immutable, so eveything will create a new list.
 
@@ -76,7 +76,7 @@ Everything is immutable, so eveything will create a new list.
 * Median
 * Mode
 
-## Iterator -> Iterator (31)
+## Iterator -> Iterator (27)
 
 * Truncate
 * Chain (concat)
@@ -103,31 +103,27 @@ Everything is immutable, so eveything will create a new list.
 * Sort by key
 * Intersperse
 * Uniquefy
-* Local Maxima
-* To Sparse
-* From Sparse
 * Reverse
-* RotateLeft
-* RotateRight
+* Rotate
 
-## Primite -> Iterator (7)
+## Primite -> Iterator (8)
 
 * Range
+* RangeFromTo
+* RangeFromToExcl
 * InfiniteRange
-* RangeInclusive
 * RangeWithStep
-* N-Sized (Takes a array of size N, returns a N-dimentional array with coordinates equal to the values in the array. Fill with X)
-* Once
+* RepeatScalar
+* Single
 * Pair
 
-## Python Itertools (6)
+## Python Itertools (5)
 
 * Combinations
 * Permutations
 * Product
 * Nth Self Product
-* Powerset
-* Sublists
+* Subsequences
 
 
 
@@ -196,14 +192,14 @@ Vectorizes arrays, composes functions.
 
 ## Functions (6)
 
-* Create a new anynymous function
+* Create a new anynymous function taking 3 arguments
 * Call function with 1 argument, others will be set to None
 * Call function with 2 arguments, others will be set to None
 * Call function with 3 arguments, others will be set to None
 * Recurse
 * Recurse File
 
-## Constants (25)
+## Constants (27)
 
 * 1
 * 2
@@ -221,6 +217,8 @@ Vectorizes arrays, composes functions.
 * 14
 * 15
 * 16
+* -1
+* 1/2
 * PI
 * E
 * Infinity
@@ -370,6 +368,7 @@ Vectorizes arrays, composes functions.
 * SplatVariables (In a map apply the function with the variables from the current lambda)
 * IsFinite: Return the list evaluated if it's finite. Otherwise, return None. Also works on numbers. If the list is infinite but can't be proven (eg. you are trying to solve 3n+1) this might hang forever. Will also hang forever for generators with side effects. For numbers returns if the number is finite. For functions returns if it's O(1).
 * Discard: Evaluate a element but return None
+
 
 
 

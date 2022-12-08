@@ -350,7 +350,117 @@ commands:
     arguments:
       - name: array
         type: array
-    return: arraay
+    return: array
     description: Return a array where each element that appeared multiple times now appears once
-  - name: Local Maxima
-    
+  - name: Reverse
+    arguments:
+      - name: array
+        type: array
+    return: array
+    description: Return a array which is the source reversed
+  - name: Rotate
+    arguments:
+      - name: array
+        type: array
+      - name: amount
+        type: integer
+    return: array
+    description: rotate the array N times, moving each element right and moving items from the end to the start. If N is negative rotate left instead.
+  - name: Range
+    arguments:
+      - name: end
+        type: integer
+    return: generator
+    description: Create a range 1-N inclusivee
+  - name: RangeFromTo
+    arguments:
+      - name: start
+        type: integer
+      - name: end
+        type: integer
+    return: genrator
+    description: Return a generator from start to end inclusive
+  - name: RangeFromToExclusive
+    arguments:
+      - name: start
+        type: integer
+      - name: end
+        type: integer
+    return: genrator
+    description: Return a generator from start to end excluding the end
+  - name: InfiniteRange
+    arguments: []
+    return: generator
+    description: Return the singleton infinite generator from 1 up to infinity.
+  - name: RangeWithStep
+    arguments:
+      - name: start
+        type: integer
+      - name: end
+        type: integer
+      - name: step
+        type: integer
+    return: generator
+    description: Return a generator from start to end excluding the end. Move by step each time.
+  - name: RepeatScalar
+    arguments:
+      - name: scalar
+        type: scalar
+    return: generator
+    description: Return a infinite generator where every element is scalar
+  - name: single
+    arguments:
+      - name: scalar
+        type: scalar
+    return: array
+    description: Return a array with one element the scalar
+  - name: Pair
+    arguments:
+      - name: scalar 1
+        type: scalar
+      - name: scalar 2
+        type: scalar
+    return: array
+    description: Return a array with 2 elements, scalar 1 and scalar 2
+  - name: Combinations
+    arguments:
+      - name: array
+        type: array
+      - name: N
+        type: integer
+    return: generator
+    description: Return a array of all combinations of array of length N, preserving orignal order.
+  - name: Permu tations
+    arguments:
+      - name: array
+        type: array
+      - name: N
+        type: integer
+    return: generator
+    description: Return a generator of all orderings of any subset of length N of array
+  - name: Cartesian Product
+    arguments:
+      - name: array 1
+        type: array
+      - name: array 2
+        type: array
+    return: generator
+    description: Return all possible combinations of a and b, as a array of pairs
+  - name: Cartesian Power
+    arguments:
+      - name: array
+        type: array
+      - name: N
+        type: integer
+    return: generator
+    description: Return a array of all possible combinations of a array with itself of length N
+  - name: Subsequences
+    arguments:
+      - name: array
+        type: array
+    return: generator
+    description: Return a generator of all subsequences of array
+  - 
+
+
+
