@@ -460,7 +460,39 @@ commands:
         type: array
     return: generator
     description: Return a generator of all subsequences of array
-  - 
-
+  - name: Add
+    arguments:
+      - name: operand 1
+        type: number
+      - name: operand 2
+        type: number
+  - name: Subtract
+    arguments:
+      - name: operand 1
+        type: number
+      - name: operand 2
+        type: number
+  # More operators skipped for now
+  - name: If
+    arguments:
+      - name: condition
+        type: number
+      - name: if-true
+        type: lambda-0-implicit
+      - name: if-false
+        type: lambda-0-implicit
+    return: scalar
+    description: Returns the if-true case if the argument is truthy, otherwise false
+  ## Variables
+  - name: 1st Variable
+    arguments: []
+    return: scalar
+  - name: 2nd Variable
+    arguments: []
+    return: scalar
+  - name: 3rd Variable
+    arguments: []
+    return: scalar
+    
 
 
