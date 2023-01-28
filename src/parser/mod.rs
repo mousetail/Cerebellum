@@ -31,20 +31,4 @@ pub fn to_ast(item: &[AstSymbol], start: &mut usize) -> AstNode {
             fourth: Box::new(to_ast(item, start)),
         },
     }
-    // if let Some(u) = NullaryOperator::from_symbol(head) {
-    //     AstNode::Nullary { kind: u }
-    // } else if let Some(u) = UnaryOperator::from_symbol(head) {
-    //     AstNode::Unary {
-    //         kind: u,
-    //         first: Box::new(to_ast(item, start)),
-    //     }
-    // } else if let Some(u) = BinaryOperator::from_symbol(head) {
-    //     AstNode::Binary {
-    //         kind: u,
-    //         first: Box::new(to_ast(item, start)),
-    //         second: Box::new(to_ast(item, start)),
-    //     }
-    // } else {
-    //     panic!("Invalid AST node: {:?}", head);
-    // }
 }

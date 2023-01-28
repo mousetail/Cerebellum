@@ -72,12 +72,12 @@ impl AstSymbol {
 crate::derive_operator! {
     #[derive(Copy, Clone, Debug, Eq, PartialEq)]
     pub enum UnaryOperator {
-        #[symbol = "first"]
-        FirstVar,
-        #[symbol = "second"]
-        SecondVar,
-        #[symbol = "third"]
-        ThirdVar,
+        // #[symbol = "first"]
+        // FirstVar,
+        // #[symbol = "second"]
+        // SecondVar,
+        // #[symbol = "third"]
+        // ThirdVar,
     }
 }
 
@@ -85,10 +85,13 @@ crate::derive_operator! {
     #[derive(Copy, Clone, Debug, Eq, PartialEq)]
     pub enum NullaryOperator {
         #[symbol = "1"]
+        #[function = one]
         One,
         #[symbol = "2"]
+        #[function = one]
         Two,
         #[symbol = "3"]
+        #[function = one]
         Three,
     }
 }
@@ -96,8 +99,8 @@ crate::derive_operator! {
 crate::derive_operator! {
     #[derive(Copy, Clone, Debug, Eq, PartialEq)]
     pub enum BinaryOperator {
-        #[symbol = "add"]
-        Add,
+        // #[symbol = "add"]
+        // Add,
     }
 }
 
